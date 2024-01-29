@@ -34,25 +34,28 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     // background-color: $charcoal;
-    font-family: "Molengo", sans-serif;
+    font-family: "Gantari", sans-serif;
 
     .radio_box_starter {
         @extend .flex-center;
+        flex-direction: column;
         width: 15rem;
         height: 11.25rem;
         background-color: $pearl;
         border-radius: 3rem;
+        gap: 1.5rem;
         box-shadow: 0px 3px 0px 0px rgb(34, 34, 34),
-            /* 1st Shadow */ 0px 7px 10px 0px rgb(17, 17, 17),
-            /* 1nd Shadow */ inset 0px 1px 1px 0px rgba(250, 250, 250, 0.2),
-            /* 3rd Shadow */ inset 0px -12px 35px 0px rgba(0, 0, 0, 0.5); /* 4th Shadow */
+            0px 7px 10px 0px rgb(17, 17, 17),
+            inset 0px 1px 1px 0px rgba(250, 250, 250, 0.2),
+            inset 0px -12px 35px 0px rgba(0, 0, 0, 0.5);
+
         .btn_wrapper {
             @extend .flex-center;
             background-color: rgb(83, 87, 93);
             box-shadow: 0px 3px 0px 0px rgb(34, 34, 34),
-                /* 1st Shadow */ 0px 7px 10px 0px rgb(17, 17, 17),
-                /* 1nd Shadow */ inset 0px 1px 1px 0px rgba(250, 250, 250, 0.2),
-                /* 3rd Shadow */ inset 0px -12px 35px 0px rgba(0, 0, 0, 0.5); /* 4th Shadow */
+                0px 7px 10px 0px rgb(17, 17, 17),
+                inset 0px 1px 1px 0px rgba(250, 250, 250, 0.2),
+                inset 0px -12px 35px 0px rgba(0, 0, 0, 0.5);
             width: 50%;
             height: 50%;
             border-radius: 3rem;
@@ -60,7 +63,28 @@ body {
             i {
                 font-size: 4rem;
                 transition: 200ms all ease-in-out;
+                cursor: pointer;
             }
+        }
+
+        .dot_off {
+            display: block;
+            width: 0.75rem;
+            height: 0.75rem;
+            background-color: rgb(226, 0, 0);
+            box-shadow: inset 0px 1px 0px 0px rgba(250, 250, 250, 0.5),
+                0px 0px 3px 2px rgba(226, 0, 0, 0.5);
+            border-radius: 100%;
+            transition: 500ms all ease-in-out;
+        }
+        .dot_on {
+            width: 0.75rem;
+            height: 0.75rem;
+            box-shadow: inset 0px 1px 0px 0px rgba(250, 250, 250, 0.5),
+                0px 0px 3px 2px rgba(135, 187, 83, 0.5);
+            background-color: rgb(135, 187, 83);
+            border-radius: 100%;
+            transition: 100ms all ease-in-out;
         }
         .btn_clicked {
             color: white;
@@ -73,6 +97,10 @@ body {
         }
     }
     .radio_box {
+        box-shadow: 0px 3px 0px 0px rgb(34, 34, 34),
+            0px 7px 10px 0px rgb(17, 17, 17),
+            inset 0px 1px 1px 0px rgba(250, 250, 250, 0.2),
+            inset 0px -12px 35px 0px rgba(0, 0, 0, 0.5);
         display: flex;
         flex-direction: column;
         width: 30rem;
@@ -85,7 +113,7 @@ body {
             width: 100%;
             border-top-right-radius: 3rem;
             border-top-left-radius: 3rem;
-            padding: 2vh;
+            padding: 3vh;
             background: linear-gradient(
                 0deg,
                 rgba(60, 60, 60, 1) 2%,
@@ -96,6 +124,18 @@ body {
             i,
             h2 {
                 font-size: 3vh;
+                padding: 1rem;
+            }
+            i {
+                cursor: pointer;
+            }
+            .fa-power-off {
+                box-shadow: 0px 3px 0px 0px rgb(34, 34, 34),
+                    0px 7px 10px 0px rgb(17, 17, 17),
+                    inset 0px 1px 1px 0px rgba(250, 250, 250, 0.2),
+                    inset 0px -12px 35px 0px rgba(0, 0, 0, 0.5);
+                border-radius: 2rem;
+                color: white;
             }
         }
         .error_msg {

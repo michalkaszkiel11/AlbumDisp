@@ -1,0 +1,1 @@
+change dot green to red when album is turned off 

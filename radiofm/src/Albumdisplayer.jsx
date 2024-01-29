@@ -1,7 +1,7 @@
 import { Album } from "./Album";
 import { useContextAlbum } from "./Context";
 import { Suspense } from "react";
-export const AlbumDisplayer = () => {
+export const AlbumDisplayer = ({ shouldRenderFunction }) => {
     const { data, error, selectedAlbum } = useContextAlbum();
     function Loading() {
         return <div className="loading-spinner"></div>;
@@ -11,7 +11,10 @@ export const AlbumDisplayer = () => {
             <header>
                 <i className="fa-solid fa-chevron-left"></i>
                 <h2>Albums</h2>
-                <i className="fa-solid fa-power-off"></i>
+                <i
+                    className="fa-solid fa-power-off"
+                    onClick={shouldRenderFunction}
+                ></i>
             </header>
             {error ? (
                 <div className="error_msg">
