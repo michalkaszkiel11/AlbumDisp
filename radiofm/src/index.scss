@@ -1,0 +1,172 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+$charcoal: #4b4b4b;
+$ash: #544c4a;
+$pearl: #d9dddc;
+
+//Ready variables
+.flex-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.flex-spaceBetween {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+.App {
+    @extend .flex-center;
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./images/bg.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    // background-color: $charcoal;
+
+    .radio_box {
+        display: flex;
+        flex-direction: column;
+        width: 30rem;
+        height: 45rem;
+        background-color: $pearl;
+        border-radius: 3rem;
+        header {
+            @extend .flex-spaceBetween;
+            height: 20%;
+            width: 100%;
+            border-top-right-radius: 3rem;
+            border-top-left-radius: 3rem;
+            padding: 2vh;
+            background: linear-gradient(
+                0deg,
+                rgba(60, 60, 60, 1) 2%,
+                rgba(128, 126, 119, 1) 49%,
+                rgba(217, 221, 220, 1) 100%
+            );
+
+            i,
+            h2 {
+                font-size: 3vh;
+            }
+        }
+        .error_msg {
+            @extend .flex-center;
+            flex-direction: column;
+            width: 100%;
+            height: 65%;
+            font-size: larger;
+            color: red;
+            padding: 1rem;
+            text-align: center;
+        }
+        .channels_list {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            height: 65%;
+            padding: 1rem;
+            overflow: scroll;
+
+            .album_single {
+                @extend .flex-center;
+                flex-direction: column;
+                transition: 1s all ease-in-out;
+                .visual_details {
+                    @extend .flex-spaceBetween;
+                    i {
+                        font-size: 5vh;
+                    }
+                    img {
+                        padding: 1rem;
+                        width: 20vh;
+                        height: fit-content;
+                    }
+                }
+                p {
+                    width: 100%;
+                    text-align: center;
+                    font-size: 2vh;
+                }
+            }
+
+            .albums {
+                @extend .flex-center;
+                flex-direction: column;
+
+                p {
+                    padding: 3rem 1rem 3rem 1rem;
+                    width: 100%;
+                    text-align: center;
+                    font-size: 3vh;
+                    border-bottom: 2px solid #ccc;
+                }
+            }
+            .channel_visible {
+                display: block;
+            }
+        }
+        .channel_current {
+            @extend .flex-center;
+            height: 15%;
+            width: 100%;
+            border-top: 2px solid #ccc;
+            strong {
+                font-size: 1.6vh;
+            }
+            .current_song {
+                width: 100%;
+                text-align: center;
+                font-size: 2vh;
+            }
+        }
+    }
+}
+//scroll style
+::-webkit-scrollbar {
+    width: 5px;
+    height: 5px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+.loading-spinner {
+    border: 4px solid rgba(0, 0, 0, 0.1);
+    border-top: 4px solid #3498db;
+    border-radius: 50%;
+    width: 40px;
+    height: 40px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto; /* Adjust the margin based on your layout */
+}
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
