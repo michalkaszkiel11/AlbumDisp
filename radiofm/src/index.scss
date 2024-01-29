@@ -34,7 +34,44 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     // background-color: $charcoal;
+    font-family: "Molengo", sans-serif;
 
+    .radio_box_starter {
+        @extend .flex-center;
+        width: 15rem;
+        height: 11.25rem;
+        background-color: $pearl;
+        border-radius: 3rem;
+        box-shadow: 0px 3px 0px 0px rgb(34, 34, 34),
+            /* 1st Shadow */ 0px 7px 10px 0px rgb(17, 17, 17),
+            /* 1nd Shadow */ inset 0px 1px 1px 0px rgba(250, 250, 250, 0.2),
+            /* 3rd Shadow */ inset 0px -12px 35px 0px rgba(0, 0, 0, 0.5); /* 4th Shadow */
+        .btn_wrapper {
+            @extend .flex-center;
+            background-color: rgb(83, 87, 93);
+            box-shadow: 0px 3px 0px 0px rgb(34, 34, 34),
+                /* 1st Shadow */ 0px 7px 10px 0px rgb(17, 17, 17),
+                /* 1nd Shadow */ inset 0px 1px 1px 0px rgba(250, 250, 250, 0.2),
+                /* 3rd Shadow */ inset 0px -12px 35px 0px rgba(0, 0, 0, 0.5); /* 4th Shadow */
+            width: 50%;
+            height: 50%;
+            border-radius: 3rem;
+            transition: 200ms all ease-in-out;
+            i {
+                font-size: 4rem;
+                transition: 200ms all ease-in-out;
+            }
+        }
+        .btn_clicked {
+            color: white;
+            transform: scale(0.8);
+            transition: 200ms all ease-in-out;
+        }
+        .wrapper_clicked {
+            transform: translateY(5px);
+            transition: 200ms all ease-in-out;
+        }
+    }
     .radio_box {
         display: flex;
         flex-direction: column;
@@ -104,13 +141,14 @@ body {
             .albums {
                 @extend .flex-center;
                 flex-direction: column;
-
-                p {
-                    padding: 3rem 1rem 3rem 1rem;
-                    width: 100%;
-                    text-align: center;
-                    font-size: 3vh;
-                    border-bottom: 2px solid #ccc;
+                .album_item {
+                    p {
+                        padding: 3rem 1rem 3rem 1rem;
+                        width: 100%;
+                        text-align: center;
+                        font-size: 3vh;
+                        border-bottom: 2px solid #ccc;
+                    }
                 }
             }
             .channel_visible {

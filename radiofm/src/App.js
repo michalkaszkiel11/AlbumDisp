@@ -1,12 +1,15 @@
-import { Radio } from "./Albumdisplayer";
+import { AlbumDisplayer } from "./AlbumDisplayer";
 import { ContextAlbum } from "./Context";
+import { Starter } from "./Starter";
+
 function App() {
     return (
-        <div className="App">
-            <ContextAlbum>
-                <Radio />
-            </ContextAlbum>
-        </div>
+        <ContextAlbum>
+            <div className="App">
+                <Starter />
+                <AlbumDisplayer />
+            </div>
+        </ContextAlbum>
     );
 }
 

@@ -6,7 +6,7 @@ export const Album = ({ data }) => {
             <div className="albums">
                 {data &&
                     data.map((item) => (
-                        <div key={item.id} className="album-item">
+                        <div key={item.id} className="album_item">
                             <p onClick={() => getAlbumDetails(item.id)}>
                                 {item.name}
                             </p>

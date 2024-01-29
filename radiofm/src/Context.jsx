@@ -6,6 +6,7 @@ export const ContextAlbum = ({ children }) => {
     const [selectedAlbum, setSelectedAlbum] = useState(null);
     const [data, setData] = useState(null);
     const [error, setError] = useState(null);
+    const [start, setStart] = useState(false);
     const options = {
         method: "GET",
         url: "https://genius-song-lyrics1.p.rapidapi.com/artist/albums/",
@@ -38,7 +39,14 @@ export const ContextAlbum = ({ children }) => {
         const album = data.find((album) => album.id === id);
         setSelectedAlbum(album);
     };
-
+    const handleStart = () => {
+        setStart(!start);
+        console.log(start);
+        const btn = document.querySelector(".fa-power-off");
+        const btnWrapper = document.querySelector(".btn_wrapper");
+        btnWrapper.classList.toggle("wrapper_clicked");
+        btn.classList.toggle("btn_clicked");
+    };
     return (
         <AlbumContext.Provider
             value={{
@@ -47,6 +55,8 @@ export const ContextAlbum = ({ children }) => {
                 setSelectedAlbum,
                 getAlbumDetails,
                 error,
+                handleStart,
+                start,
             }}
         >
             {children}

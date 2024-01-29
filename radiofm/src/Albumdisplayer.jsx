@@ -1,7 +1,7 @@
 import { Album } from "./Album";
 import { useContextAlbum } from "./Context";
 import { Suspense } from "react";
-export const Radio = () => {
+export const AlbumDisplayer = () => {
     const { data, error, selectedAlbum } = useContextAlbum();
     function Loading() {
         return <div className="loading-spinner"></div>;
